@@ -401,6 +401,9 @@ let windowsNetworkDrive = {
 			{
 				drivePath = path.normalize(drivePath);
 				drivePath.replace('/', '\\');
+				if(drivePath[drivePath.length-1] == "\\"){
+					drivePath = drivePath.substring(0, drivePath.length - 1);
+				}
 				return drivePath;
 			});
 		return pathPromise;
