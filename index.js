@@ -240,7 +240,6 @@ let windowsNetworkDrive = {
 			/**
 			 * Get the next drive letter
 			 */
-			.then(driveLetters.randomLetter)
 			.then(function (newDriveLetter)
 			{
 				if (undefined === driveLetter)
@@ -248,7 +247,7 @@ let windowsNetworkDrive = {
 					/**
 					 * Get a drive letter if one was not given
 					 */
-					driveLetter = newDriveLetter;
+					driveLetter = driveLetters.lettersSync().slice(-1)[0];
 				}
 				return;
 			})
